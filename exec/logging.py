@@ -3,12 +3,14 @@ import os
 
 def setup():
     os.makedirs("bot", exist_ok=True)
-    log_path = os.path.join("exec", "exec.log")
 
-    logging.basicConfig(
-        filename=log_path,
-        level=logging.INFO,
-        format="%(asctime)s - %(levelname)s -%(message)s",
-    )
+    logger = logging.getLogger("trading_bot")
+    logger.setLevel(logging.INFO)
 
-    return logging.getLogger()
+    if not logger.handlers:
+        file_handler = logging.FileHandler("exec/exec.log")
+        formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s")
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+
+    return logger

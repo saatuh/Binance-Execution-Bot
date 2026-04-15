@@ -1,0 +1,2 @@
+2026-04-15 14:48:21,618 | INFO | REQUEST - GET /fapi/v2/positionRisk - params={'timestamp': 1776244698737, 'recvWindow': 10000, 'signature': '4bd053719919f88cca56833947762b1a12d4f9de2b648bd084ad398a8e76925c'}
+2026-04-15 14:48:22,727 | INFO | Fetching positions
