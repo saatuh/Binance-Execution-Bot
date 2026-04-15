@@ -17,11 +17,17 @@ def sign(secret, params):
     sign = hmac.new(secret.encode(), query.encode(), hashlib.sha256).hexdigest()
     return sign
 
+def get_server_time():
+    url = BASE_URL + "/fapi/v1/time"
+    response = requests.get(url)
+    return response.json()["serverTime"]
+
 def Request_send(endpoint,method,params):
     api = os.getenv("BINANCE_API_KEY")
     secret = os.getenv("BINANCE_API_SECRET")
     
-    params['timestamp'] = int(time.time()*1000)
+    server_time = get_server_time()
+    params['timestamp'] = server_time
     params['recvWindow'] = 10000
     params['signature'] = sign(secret, params)
 
