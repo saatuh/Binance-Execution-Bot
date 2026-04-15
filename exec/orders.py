@@ -102,5 +102,22 @@ def fetchOpen(symbol=None):
 
     return Request_send("/fapi/v1/openOrders","GET",params)
 
-def positions():
-    return Request_send("/fapi/v2/positionRisk","GET",{})
+def positions(symbol=None):
+    data = Request_send("/fapi/v2/positionRisk", "GET", {})
+
+    if isinstance(data, dict) and data.get("code"):
+        return data
+
+    active_positions = []
+
+    for pos in data:
+        amt = float(pos.get("positionAmt", 0))
+
+        if amt != 0:
+            if symbol:
+                if pos["symbol"] == symbol:
+                    active_positions.append(pos)
+            else:
+                active_positions.append(pos)
+
+    return active_positions

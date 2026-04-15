@@ -53,23 +53,20 @@ def main():
                     if isinstance(_, dict):
                         print(f"Order ID: {order.get('orderId')}, Symbol: {order.get('symbol')}, Side: {order.get('side')}, Type: {order.get('type')}, Quantity: {order.get('origQty')}, Price: {order.get('price')}, Status: {order.get('status')}")   
 
-        elif argu.action == "positions":
-            position_dat = positions()
-            logger.info("Fetching positions")
-            print("\nCurrent Positions:")
-            if isinstance(position_dat, dict) and "code" in position_dat:
-                print(f"\nAPI Error: {position_dat.get('msg')}")
-                return
-            set_active = False
-            for position in position_dat:
-                size = float(position.get('positionAmt', 0))
-
-                if size != 0:
-                    print(f"Symbol: {position.get('symbol')}, Position Size: {position.get('positionAmt')}, Entry Price: {position.get('entryPrice')}, Unrealized PnL: {position.get('unRealizedProfit')}")
-                    set_active = True
-
-            if not set_active:
-                    print("No open positions")
+        elif argu.action == "positions": 
+            print("\nFetching positions...") 
+            logger.info("Fetching positions") 
+            positions_data = positions(argu.symbol) 
+            
+            if isinstance(positions_data, dict) and positions_data.get("code"): 
+                raise Exception(positions_data) 
+            
+            print("\nCurrent Positions:") 
+            if not positions_data: 
+                print("No open positions") 
+            else: 
+                for pos in positions_data: 
+                    print( f"Symbol: {pos.get('symbol')} | " f"Size: {pos.get('positionAmt')} | " f"Entry: {pos.get('entryPrice')} | " f"PnL: {pos.get('unRealizedProfit')}" )
 
         elif argu.action == "SL/TP":
             if not argu.symbol:

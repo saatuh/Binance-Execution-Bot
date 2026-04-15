@@ -1,2 +1,11 @@
 2026-04-15 14:48:21,618 | INFO | REQUEST - GET /fapi/v2/positionRisk - params={'timestamp': 1776244698737, 'recvWindow': 10000, 'signature': '4bd053719919f88cca56833947762b1a12d4f9de2b648bd084ad398a8e76925c'}
 2026-04-15 14:48:22,727 | INFO | Fetching positions
+2026-04-15 14:59:43,565 | INFO | REQUEST - GET /fapi/v2/positionRisk - params={'timestamp': 1776245380601, 'recvWindow': 10000, 'signature': 'c5c6f3af5e182a48a63f91d1cb51b705e746bd552273d9811802787cab7ca4d9'}
+2026-04-15 14:59:44,797 | INFO | Fetching positions
+2026-04-15 15:01:01,877 | INFO | REQUEST - GET /fapi/v2/positionRisk - params={'timestamp': 1776245458976, 'recvWindow': 10000, 'signature': '4846c6dabf7a754251c15555d9d30cc74d52adbc98abf8f86939cd473bffea81'}
+2026-04-15 15:01:03,132 | INFO | Fetching positions
+2026-04-15 15:01:08,848 | INFO | REQUEST - GET /fapi/v2/positionRisk - params={'timestamp': 1776245465929, 'recvWindow': 10000, 'signature': 'b171d0b06ba000bf0c375dcbd9ba2eaa0fb2072d9008c0df6bc6a2852735bd9b'}
+2026-04-15 15:01:10,216 | INFO | Fetching positions
+2026-04-15 15:04:18,112 | ERROR | Error: name 'args' is not defined
+2026-04-15 15:04:32,242 | INFO | Fetching positions
+2026-04-15 15:04:33,754 | INFO | REQUEST - GET /fapi/v2/positionRisk - params={'timestamp': 1776245670817, 'recvWindow': 10000, 'signature': '2f29e73289460f2dba131ad33a293cd72f77a5428b2ef64f3c461853aa5058e9'}
