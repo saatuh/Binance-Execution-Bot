@@ -1,10 +1,10 @@
 # Binance Execution Bot 
 
-# I explored how binance client works through this python execution system project, which runs on the Binance Futures Testnet.
+I explored how binance client works through this python execution system project, which runs on the Binance Futures Testnet.
 
-# The main purpose of this algorithm is to allow users to place orders, view open orders, track positions, and simulate risk management features like Stop Loss and Take Profit.
+The main purpose of this algorithm is to allow users to place orders, view open orders, track positions, and simulate risk management features like Stop Loss and Take Profit.
 
-# I built this with a clean, modular structure and includes proper logging, validation, and error handling.
+I built this with a clean, modular structure and includes proper logging, validation, and error handling.
 
 
 # Core Features:
@@ -17,22 +17,22 @@
 7. Error handling for both input and API (various try/except/else loops in exec/orders.py, cli.py)
 
 # Note: Limitations in Testnet:
-# Due to limitations in Binance Futures Testnet, the Stop Loss and Take Profit (MARKET) orders are not fully supported by currently used endpoints. 
-# As a workaround, I have used LIMIT order logic to partially simulate this.
+Due to limitations in Binance Futures Testnet, the Stop Loss and Take Profit (MARKET) orders are not fully supported by currently used endpoints. 
+As a workaround, I have used LIMIT order logic to partially simulate this.
 
 # Project Map:
-execution-bot/
-│
-├── exec/
-│   ├── orders.py           # API interaction layer (which is also the binance wrapper)
-│   ├── validator.py        # Input validation
-│   ├── logging.py          # setup for logging
-│   ├── exec.log            # Log file (auto-generated)
-│
-├── cli.py                  # CLI entry point (where user types in command)
-├── .env                    # API credentials
-├── requirements.txt
-└── README.md
+- execution-bot/
+- │
+- ├── exec/
+- │   ├── orders.py           # API interaction layer (which is also the binance wrapper)
+- │   ├── validator.py        # Input validation
+- │   ├── logging.py          # setup for logging
+- │   ├── exec.log            # Log file (auto-generated)
+- │
+- ├── cli.py                  # CLI entry point (where user types in command)
+- ├── .env                    # API credentials
+- ├── requirements.txt
+- └── README.md
 
 # Setup Instructions:
 1. Clone the Repository:
